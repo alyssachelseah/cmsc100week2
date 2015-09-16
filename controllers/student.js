@@ -22,8 +22,7 @@ exports.findOne = function(req,res,next){
 };
 
 exports.insert = function(req,res,next){
-   
-
+   console.log(req.body)
    db.query("insert into student(studno,name) values (?,?)", [req.body.studno, req.body.name],function(err,rows){
       if(err) return next(err);
       res.send(rows);
